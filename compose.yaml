@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  mautrix-telegram:
+    container_name: mautrix-telegram
+    deploy:
+      restart_policy:
+        condition: always
+        delay: 5s
+    image: dock.mau.dev/mautrix/telegram:latest
+    labels:
+      com.centurylinklabs.watchtower.enable: "true"
+      traefik.enable: "false"
+    volumes:
+      - "./mautrix/telegram/data:/data:z"
+
+networks:
+  default:
+    external: true
+    name: $NETWORK
