@@ -1,2 +1,2 @@
 .env
-mautrix/telegram/data/
+src/mautrix/telegram/data/
